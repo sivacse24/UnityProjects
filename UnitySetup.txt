@@ -1,0 +1,4 @@
+Unity setup for Git updates
+Edit->Project settings->Editor
+Under "Version control"->Mode->Visible Meta Files
+Under "Asset Serialization"-->Mode->Force Text
