@@ -29,15 +29,15 @@ public class MovePlayerInStage : MonoBehaviour {
 	void Start () 
 	{
 		rb = GetComponent<Rigidbody>();
-		//stageSize = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width,Screen.height,0));
+		stageSize = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width,Screen.height,0));//this will work only when the camera in orthoGraphicView
 
 		objWidth = transform.GetComponent<Renderer>().bounds.size.x;
 		objHeight = transform.GetComponent<Renderer>().bounds.size.y;
 
-		Debug.Log(stageSize+"-stageSize-"+stageSize.x+"-objWidth-"+stageSize.y+"--Screen.width--"+Screen.width+"---"+Camera.main.pixelWidth);
+		//Debug.Log(stageSize+"-stageSize-"+stageSize.x+"-objWidth-"+stageSize.y+"--Screen.width--"+Screen.width+"---"+Camera.main.pixelWidth);
 
-		xScreenLimit = stageSize.x - objWidth;
-		yScreenLimit = stageSize.y - objHeight;
+		xScreenLimit = stageSize.x - objWidth/2;
+		yScreenLimit = stageSize.y - objHeight/2;
 
 	}
 	
@@ -47,10 +47,12 @@ public class MovePlayerInStage : MonoBehaviour {
 		moveX = Input.GetAxis("Horizontal");
 		moveY = Input.GetAxis("Vertical");	
 		targetPos = new Vector3(moveX,moveY,0)*Time.deltaTime*moveSpeed;
+		Vector3 tmpCalcPos = transform.position + targetPos;
 		//rb.velocity =targetPos;
 		//Vector3 tmpPos = Camera.main.WorldToScreenPoint (transform.position);
-		//Debug.Log(tmpPos+"-targetPos-");
+		Debug.Log(tmpCalcPos+"-targetPos-"+stageSize);
 
+		if(tmpCalcPos.x>-xScreenLimit && tmpCalcPos.x<xScreenLimit &&tmpCalcPos.y<yScreenLimit && tmpCalcPos.y>-yScreenLimit)
 		transform.Translate(targetPos);
 	
 
