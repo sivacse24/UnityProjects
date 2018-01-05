@@ -1,4 +1,12 @@
+console.developers.google.com/apis/dashboard?project=testmplayer-14493884&duration=PT1H
+
+Upload certificate(Local testing)
+SHA1: AE:B5:3B:1B:DE:DF:2D:DB:8F:BA:67:DD:72:72:01:0C:75:2E:72:C7
+
+App signing certificate(Once apk moved to production)
 80:FC:97:9E:7B:C2:12:25:D6:57:82:D9:6A:86:B9:ED:D2:D8:82:07
+
+
 
 81211037785-iiuog7j0qubatb8k1q0ujn48u8fmg6pf.apps.googleusercontent.com
 
@@ -15,3 +23,4 @@ Save this file as res/values/games-ids.xml in your project.
   <!-- achievement tst -->
   <string name="achievement_tst" translatable="false">CgkI2bC4xK4CEAIQAQ</string>
 </resources>
+
