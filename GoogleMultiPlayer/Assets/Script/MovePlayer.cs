@@ -2,13 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-/*using GooglePlayGames;
+using GooglePlayGames;
 using GooglePlayGames.BasicApi;
 using UnityEngine.SocialPlatforms;
-using GooglePlayGames.BasicApi.Multiplayer;*/
+using GooglePlayGames.BasicApi.Multiplayer;
 
 
-public class MovePlayer : MonoBehaviour {
+public class MovePlayer : MonoBehaviour,RealTimeMultiplayerListener {
 
 	[SerializeField]
 	private SliderBar hSlider,vSlider;
@@ -19,6 +19,7 @@ public class MovePlayer : MonoBehaviour {
 	[SerializeField]
 	private GameObject playerPrefeb;
 
+	private bool isAuthenicatedOnce=false;
 	// Use this for initialization
 	void Start () 
 	{
@@ -28,18 +29,21 @@ public class MovePlayer : MonoBehaviour {
 	// Update is called once per frame
 	void Update () 
 	{
+		if(!isAuthenicatedOnce)
+		{
+			isAuthenicatedOnce = true;
+			authenticateUser ();
+
+		}
 		
 		if(playerPrefeb!=null)
 		{
 			playerPrefeb.transform.Translate (new Vector3(hSlider.sliderValue,0,vSlider.sliderValue)*Time.deltaTime*playerMoveSpeed);
 		}
-		else
-		{
-			//authenticateUser ();
-		}
+	
 	}
 
-	/*private void authenticateUser()
+	private void authenticateUser()
 	{
 		PlayGamesClientConfiguration config = new PlayGamesClientConfiguration.Builder().Build();
 
@@ -49,15 +53,19 @@ public class MovePlayer : MonoBehaviour {
 		// Activate the Google Play Games platform
 		PlayGamesPlatform.Activate();
 
+		Debug.Log ("siva -- authenticateUser");
+
 		PlayGamesPlatform.Instance.Authenticate((bool success) => {
 			// handle success or failure
+			Debug.Log ("siva -- Authenticate--"+success);
+
 			if(success)
 			{
 				CreateQuickGame();
 			}
 			else
 			{
-				Debug.Log ("Failed to Login");
+				Debug.Log ("siva -- Failed to Login");
 			}
 		});
 	}
@@ -106,5 +114,5 @@ public class MovePlayer : MonoBehaviour {
 		//throw new System.NotImplementedException ();
 	}
 
-	#endregion*/
+	#endregion
 }
