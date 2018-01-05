@@ -1,0 +1,17 @@
+80:FC:97:9E:7B:C2:12:25:D6:57:82:D9:6A:86:B9:ED:D2:D8:82:07
+
+81211037785-iiuog7j0qubatb8k1q0ujn48u8fmg6pf.apps.googleusercontent.com
+
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+Google Play game services IDs.
+Save this file as res/values/games-ids.xml in your project.
+-->
+<resources>
+  <!-- app_id -->
+  <string name="app_id" translatable="false">81211037785</string>
+  <!-- package_name -->
+  <string name="package_name" translatable="false">com.test.mp</string>
+  <!-- achievement tst -->
+  <string name="achievement_tst" translatable="false">CgkI2bC4xK4CEAIQAQ</string>
+</resources>
