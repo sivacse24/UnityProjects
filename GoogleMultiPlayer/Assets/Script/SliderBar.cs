@@ -10,6 +10,7 @@ public class SliderBar : MonoBehaviour,IPointerDownHandler,IPointerUpHandler {
 	private Slider sliderBar;
 	public float sliderValue;
 
+	public bool isPlayerMove = false;
 	// Use this for initialization
 	void Start () {
 
