@@ -16,6 +16,7 @@ public class Bomb : MonoBehaviour {
 
 		if(bombExploreTime<=0)
 		{
+			MapDestoryer.instance.Explode(transform.position);
 			Destroy(gameObject);
 		}
 	}

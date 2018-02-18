@@ -2575,6 +2575,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de9c0863979cbe0488d9eb38c7e93e9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tileMap: {fileID: 2039936217}
+  wallTile: {fileID: 11400000, guid: dd221daf9de1c624b82c1f90bda93bae, type: 2}
+  destTile: {fileID: 11400000, guid: f5cead61b9ade294eaef2b42ad349148, type: 2}
+  expAnimation: {fileID: 1631604495571072, guid: f6b07317a0538ba41a2cf8943112ca01,
+    type: 2}
 --- !u!1 &1771739605
 GameObject:
   m_ObjectHideFlags: 0
